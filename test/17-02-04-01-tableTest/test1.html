@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    thead { color: yellow;}
+    tbody { color: pink;}
+    tfoot { color: white;}
+  </style>
+</head>
+<body>
+  <table border="1">
+    <caption>测试表格</caption>
+    <colgroup>
+      <col span="1" style="background: red;" /><col span="1" style="background: green" /><col span="1" style="background: blue" />
+    </copgroup>
+    <thead>
+      <tr>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <td>foot1</td>
+      <td>foot2</td>
+      <td>foot3</td>
+    </tfoot>
+    <tbody>
+      <tr>
+        <td>3476896</td>
+        <td>My first HTML</td>
+        <td>$53</td>
+      </tr>
+      <tr>
+        <td>5869207</td>
+        <td>My first CSS</td>
+        <td>$49</td>
+      </tr>
+    </tbody>
+
+  </table>
+</body>
+</html>

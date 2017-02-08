@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    ul li { display: inline; padding: 2px 10px; background: #CCC;}
+    div { display: none; width: 100px;height: 80px;margin-left: 40px; background: #666;}
+    .div1 { display: block; background: red;}
+    .div2 { background: green;}
+    .div3 { background: blue;}
+    .div4 { background: yellow;}
+  </style>
+  <script>
+    window.onload = function(){
+      var aLi = document.getElementsByTagName("li");
+      var aDiv = document.getElementsByTagName("div");
+      for(var i=0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aLi[i].onmouseover = function(){
+          for(var i=0;i<aDiv.length;i++){
+            aDiv[i].style.display = "none";
+          }
+          aDiv[this.index].style.display = "block";
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  <div class="div1">
+    div1
+  </div>
+  <div class="div2">
+    div2
+  </div>
+  <div class="div3">
+    div3
+  </div>
+  <div class="div4">
+    div4
+  </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    ul,li { margin: 0;padding: 0; list-style-type: none;}
+    #div1 { position: relative; width: 400px; height: 200px;overflow: hidden;}
+    #div1 ul { position: absolute; left: 0; width: 1600px;height: 100%;}
+    #div1 li { display: block; float: left; width: 400px;height: 100%; }
+    #div1 li:nth-child(1) { background: red;}
+    #div1 li:nth-child(2) { background: green;}
+    #div1 li:nth-child(3) { background: blue;}
+    #div1 li:nth-child(4) { background: yellow;}
+
+    #nav { position: absolute; right: 10px;top: 10px; width: auto;height:10px;}
+    #nav span { display: inline-block; float: left; width: 10px;height: 10px; margin-left: 10px; border-radius: 50%; background: #CCC; font-size: 0;}
+  </style>
+  <script>
+  window.onload = function(){
+    var oDiv = document.getElementById("div1");
+    var oUl = oDiv.getElementsByTagName("ul")[0];
+    var aLi = oUl.getElementsByTagName("li");
+    var aSpan = oDiv.getElementsByTagName("span");
+    var timer = null;
+    var subTimer = null;
+    var index = 0;
+    var iTarget;
+    // for(var i=0;i<aSpan.length;i++){
+    //   aSpan[i].index = i;
+    //   aSpan[i].onmouseover = function(){
+    //     clearInterval(subTimer);
+    //     index = this.index;
+    //     console.log(index);
+    //     iTarget = -400*index;
+    //     startMove(iTarget);
+    //     move();
+    //   }
+
+    // }
+    move();
+    function move(){
+      subTimer = setInterval(function(){
+
+      }, 3000);
+    }
+
+
+
+
+
+
+    //startMove(-400);
+    function startMove(iTarget){
+      clearInterval(timer);//console.log(aLi[0].offsetLeft);
+      timer = setInterval(function(){
+        var speed = 0;
+        if( oUl.offsetLeft < iTarget){
+          speed = 50;
+        }else{
+          speed = -50;
+        }
+        //speed = (iTarget - oUl.offsetLeft) / 10;
+        if(oUl.offsetLeft == iTarget){
+          clearInterval(timer);
+        }else{
+          oUl.style.left = oUl.offsetLeft + speed + "px";
+        }
+      }, 30);
+    }
+  }
+
+  </script>
+</head>
+<body>
+  <div id="div1">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+    <div id="nav">
+      <span>1</span><span>2</span><span>3</span><span>4</span>
+    </div>
+  </div>
+</body>
+</html>

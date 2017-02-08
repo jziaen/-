@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html { width: 100%;height: 100%;}
+    ul,li,input,form {margin: 0;padding: 0; list-style: none;}
+    a { text-decoration: none;}
+    /*nav1*/
+    .nav1 { width: 980px; height: 50px; margin: 0 auto; background: linear-gradient(to bottom, #F6F6F6, #FFF);border: 1px solid #EAEAEA;}
+    .nav1 ul { width: auto;height: 100%; }
+    .nav1 li { display: inline-block; float: left; width: 115px;height: 50px; border-right: 1px solid #D5D5D5; font: 16px/50px "Comic Sans MS",sans-serif;text-align: center;}
+    .nav1 li:last-child { border-right: none;}
+    .nav1 li a { display: block; color: #5B5B5B;}
+    .nav1 li a:hover { color: #2B94AE;}
+
+    .nav1 li:first-child a { color: #2B94AE;} /*临时属性*/
+
+    .nav1 ul { float: left;}
+    .nav1 form { float: right; margin-right: 10px; line-height: 50px; }
+    .nav1 form input[type="text"] { width: 130px;height: 25px; margin-right: 5px; border: none; background: #F0F0F0; text-indent: 5px; outline: none; box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3); border-radius: 3px;}/*130,25 #F0F0F0*/
+    .nav1 form input[type="submit"] { width: 40px;height: 25px; background: #072437; color: #FFF; border-color: #0B304D; outline: none; border-radius: 3px;}/*40,25 #0B304D*/
+    /*nav1 end*/
+    /*nav2*/
+    .nav2 { width: 980px;height: 40px; margin: 0 auto;}
+    .nav2 ul { width: 570px; height: auto; margin-left: 10px; }
+    .nav2 li { float: left; width: 100px;height: 30px;line-height: 30px; margin-right: 2px; background: #DFDFDF; text-align: center; }
+    .nav2 li a { display: block; color: #000; text-transform: capitalize; font-weight: bold;}
+    .nav2 li:hover a { color: #FFF;background: #DB4E18;}
+    .nav2 li:first-child:hover a { font-size: 0;}
+    .nav2 li:first-child a { color: #FFF;background: #DB4E18;}/*临时属性*/
+    .nav2 li:first-child a { font-size: 0;}/*临时属性*/
+    .nav2 li:nth-child(2):hover a { font-size: 0;}
+    .nav2 li:nth-child(3):hover a { font-size: 0;}
+    .nav2 .red_bar { float: left; width: 100%;height: 10px;background: #DB4E18;}
+
+    .nav2 .change_txt { font-size: 0; z-index: 10; text-align: center;}
+    .nav2 li:hover .change_txt { font-size: 16px;}
+    .nav2 li:first-child .change_txt { font-size: 16px;}/*临时属性*/
+
+
+    /*nav2 end*/
+    /*nav3*/
+    .nav3 { width: 980px; height:64px; auto; margin: 0 auto;}
+    .nav3 ul { width: auto;height: 32px; padding-left: 100px; background: #9A0000;}
+    .nav3 li { float: left; width: 110px;height: 32px; text-align: center; background: #9A0000;}
+    .nav3 li a { display: block; width: 100%; height: 100%; font: 12px "sans-serif"; line-height: 32px; color: #FFF; text-align: center;}
+    .nav3 li:hover { background: linear-gradient(to bottom, #FFF, #F1F1F1);}
+    .nav3 li:hover a { color: #FE0000; font-weight: bold;}
+    .nav3 li:first-child { background: linear-gradient(to bottom, #FFF, #F1F1F1);}/*临时属性*/
+    .nav3 li:first-child a { color: #FE0000; font-weight: bold;}/*临时属性*/
+
+    .nav3 .content { width: 100%; height: 32px; background: #F1F1F1;}
+    /*nav3 end*/
+    /*nav4*/
+    .nav4 { width: 980px;height: 45px; background: #FDAF17; margin: 0 auto;}
+    .nav4 ul { height: 37px; background: linear-gradient(to bottom, #F2F2F2, #C2C1C6);}
+    .nav4 li { float: left; width: 150px;height: 37px;line-height: 37px;text-align: center;}
+    .nav4 li a { display: block; color: #5E5E5E;}
+    .nav4 li:hover { background: #FDAF17;}
+    .nav4 li:first-child { background: #FDAF17;}/*临时属性*/
+    /*nav4 end*/
+    /*nav5*/
+    .nav5 { width: 980px;height: 32px; background: #9C0000; margin: 0 auto;}
+    .nav5 ul { width: 552px;height: 30px; background: #FF6100;}
+    .nav5 li { float: left; width: 90px;height: 30px; border-left: 2px solid #660000; line-height: 30px;text-align: center;}
+    .nav5 li a { display: block; color: #000;font-weight: 900;}
+    .nav5 li:hover a { background: #000; color: yellow;}
+    .nav5 li:first-child a { background: #000; color: yellow;}/*临时属性*/
+    /*nav5 end*/
+
+    /*nav6*/
+    .nav6 { width: 980px;height: 45px; margin: 0 auto;}
+    .nav6 ul { width: 100%; height: 35.6px; margin-left: 30px; border-bottom: 1px solid #AEAEAE; }
+    .nav6 li { display: inline-block; float: left; width: 73px;height: 35px; background: #F9F9F9; margin-left: 5px; border: 1px solid #D7D7D7;}
+    .nav6 li a { display: block; width: 100%;height: 100%; text-align: center;font: 14px/35px "sans-serif";color: #B8B8B8;}
+    .nav6 li:hover { margin-top: -8px; padding: 4px 0; border-color: #AEAEAE; border-bottom-color: #FFF; background: #FFF;}
+    .nav6 li:first-child { margin-top: -8px; padding: 4px 0; border-color: #AEAEAE; border-bottom-color: #FFF; background: #FFF;}/*临时属性*/
+    /*nav6 end*/
+    /*nav7*/
+    .nav7 { width: 500px;height: 40px; margin: 0 auto;}
+    .nav7 ul { width: 100%;height: 100%;}
+    .nav7 li { display: inline-block; float: left; background: #4D89C5;}
+    .nav7 li a { display: block; padding: 0 10px; font: 10px/34px "微软雅黑"; text-transform: capitalize; color: #FFF; }
+    .nav7 li:hover { margin-top: -2px; background: #559ADF;}
+    .nav7 li:hover a { line-height: 36px;}
+    .nav7 li:first-child { margin-top: -2px; background: #559ADF;}/*临时属性*/
+    .nav7 li:first-child a { line-height: 36px;}/*临时属性*/
+    /*nav7 end*/
+    /*nav8*/
+    .nav8 { width: 980px;height: 40px; margin: 0 auto; background: #DFE0DF;}/*#E3E3E5*/
+    .nav8 ul { width: 100%;height: 30px; border-top: 1px solid #CCC;background: linear-gradient(to top,#DFE0DF 10%,#EFEFEF 30%,#D3D3D3 100%); box-shadow: inset 0 1px 6px #EEEEEE;}
+    .nav8 li { display: inline-block; float: left;}
+    .nav8 li:first-child { margin-left: 5px;}
+    .nav8 li a { display: block; line-height: 30px;padding: 0 10px; color: #8F8685; font-weight: bold;}
+    .nav8 li:hover { margin-top: -9px; padding-bottom: 1px; border-color: transparent;  border-top: 3px solid #EBDE79;background: #F7E341; box-shadow: inset 0 1px 1px #FFF;}
+    .nav8 li:hover a { line-height: 38px; color: #FFF;}
+    .nav8 li:first-child { margin-top: -9px; padding-bottom: 1px; border-color: transparent;  border-top: 3px solid #EBDE79;background: #F7E341; box-shadow: inset 0 1px 1px #FFF;}/*临时属性*/
+    .nav8 li:first-child a { line-height: 38px; color: #FFF;}/*临时属性*/
+
+    .nav8 .line_bar { width: 100%; height: 10px; border-bottom: 1px solid #DCC562; background: #F7E341;box-shadow: inset 0 1px 1px #FCFCFC;}
+    /*nav8 end*/
+  </style>
+</head>
+<body>
+  <div class="nav1">
+    <ul>
+      <li><a href="javascript:;">Home</a></li>
+      <li><a href="javascript:;">About us</a></li>
+      <li><a href="javascript:;">Services</a></li>
+      <li><a href="javascript:;">Clients</a></li>
+      <li><a href="javascript:;">Portfolio</a></li>
+      <li><a href="javascript:;">Contact us</a></li>
+    </ul>
+    <form method="post" action="#">
+      <input type="text" name="搜索" /><input type="submit" value="go" />
+    </form>
+  </div>
+  <br /><hr /><br />
+  <!-- +++++++++++++++++++++++++++++++++ nav1 end -->
+  <div class="nav2">
+    <ul>
+      <li><a href="javascript:;">home<b class="change_txt" href="javascript:;">首&nbsp;页</b></a></li>
+      <li><a href="javascript:;">blog<b class="change_txt" href="javascript:;">博&nbsp;客</b></a></li>
+      <li><a href="javascript:;">guestbook<b class="change_txt" href="javascript:;">留言板</b></a></li>
+      <li><a href="javascript:;">pickbar</a></li>
+      <li><a href="javascript:;">fansir</a></li>
+    </ul>
+    <div class="red_bar"></div>
+  </div>
+  <br /><hr /><br />
+  <!-- +++++++++++++++++++++++++++++++++ nav2 end -->
+  <div class="nav3">
+    <ul>
+      <li><a href="javascript:;">财务首页</a></li>
+      <li><a href="javascript:;">财务公开</a></li>
+      <li><a href="javascript:;">网上办事</a></li>
+      <li><a href="javascript:;">公告中心</a></li>
+      <li><a href="javascript:;">法规中心</a></li>
+      <li><a href="javascript:;">财税文化</a></li>
+      <li><a href="javascript:;">专题宣传</a></li>
+    </ul>
+    <div class="content"></div>
+  </div>
+  <br /><hr /><br />
+  <!-- +++++++++++++++++++++++++++++++++ nav3 end -->
+  <div class="nav4">
+    <ul>
+      <li><a href="javascript:;">Home</a></li>
+      <li><a href="javascript:;">About us</a></li>
+      <li><a href="javascript:;">Services</a></li>
+      <li><a href="javascript:;">Clients</a></li>
+      <li><a href="javascript:;">Portfolio</a></li>
+      <li><a href="javascript:;">Contact us</a></li>
+    </ul>
+  </div>
+  <br /><hr /><br />
+  <!-- +++++++++++++++++++++++++++++++++ nav4 end -->
+  <div class="nav5">
+    <ul>
+      <li><a href="javascript:;">网站首页</a></li>
+      <li><a href="javascript:;">网站首页</a></li>
+      <li><a href="javascript:;">网站首页</a></li>
+      <li><a href="javascript:;">网站首页</a></li>
+      <li><a href="javascript:;">网站首页</a></li>
+      <li><a href="javascript:;">网站首页</a></li>
+    </ul>
+  </div>
+  <br /><hr /><br />
+  <!-- +++++++++++++++++++++++++++++++++ nav5 end -->
+  <div class="nav6">
+    <ul>
+      <li><a href="javascript:;">tab one</a></li>
+      <li><a href="javascript:;">tab two</a></li>
+      <li><a href="javascript:;">tab three</a></li>
+      <li><a href="javascript:;">tab four</a></li>
+      <div style="clear: both;"></div>
+    </ul>
+  </div>
+  <br /><hr /><br />
+  <!-- +++++++++++++++++++++++++++++++++ nav6 end -->
+  <div class="nav7">
+    <ul>
+      <li><a href="javascript:;">home</a></li>
+      <li><a href="javascript:;">about</a></li>
+      <li><a href="javascript:;">services</a></li>
+      <li><a href="javascript:;">clients</a></li>
+      <li><a href="javascript:;">products</a></li>
+      <li><a href="javascript:;">f.a.q</a></li>
+      <li><a href="javascript:;">help</a></li>
+      <li><a href="javascript:;">contact us</a></li>
+    </ul>
+  </div>
+  <br /><hr /><br />
+  <!-- +++++++++++++++++++++++++++++++++ nav7 end -->
+  <div class="nav8">
+    <ul>
+      <li><a href="javascript:;">sample</a></li>
+      <li><a href="javascript:;">sample</a></li>
+      <li><a href="javascript:;">sample</a></li>
+      <li><a href="javascript:;">sample</a></li>
+      <li><a href="javascript:;">sample</a></li>
+    </ul>
+    <div class="line_bar">
+
+    </div>
+  </div>
+  <br /><hr /><br />
+  <!-- +++++++++++++++++++++++++++++++++ nav8 end -->
+</body>
+</html>
