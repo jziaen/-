@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  /*
+  reset
+  table2
+   */
+    body { font: 12px/30px "微软雅黑",sans-serif; }
+    ul,li { margin: 0;padding: 0;}
+
+    table.table2 caption { text-align: left; font: bold 18px "微软雅黑";color: #E44A82;}
+    table.table2 hr { border: none; border-top: 2px solid #F2F2F2;}
+    table.table2 td.text_right { text-align: right;}
+    table.table2 td { height: 30px;}
+    table.table2 select { width: 90px;}
+    table.table2 input[type="text"] { width: 210px;height: 20px; border: 1px solid #E6E6E6}
+    table.table2 ul { height: 26px; margin-top: -1px; border-bottom: 1px solid #EAEAEA;}
+    table.table2 li { width: 70px;height: 25px; border: 1px solid #EAEAEA;margin-left: 5px;float: left; font: bold 14px/27px "宋体";text-align: center;list-style: none;background: #F3F3F3; }
+    table.table2 li:first-child { border-bottom: 1px solid #FFF; background: #FFF;}
+    table.table2 a {text-decoration: none;}
+    table.table2 .btn {width: 300px;height:50px; background: linear-gradient(to bottom, #F25890, #D22E6A); border: 1px solid #EEEDEE; color: #FFF;font: 18px "微软雅黑";box-shadow: 1px 1px 2px rgba(0,0,0,0.3);border-radius: 5px;cursor: pointer;}
+    table.table2 p { margin: 0;padding: 0; line-height: 20px;}
+
+
+
+  </style>
+</head>
+<body>
+  <form method="post" action="#">
+    <table cellspacing="0" align="center" class="table2">
+      <caption>一分钟注册，找到一辈子的幸福</caption>
+      <colgroup>
+        <col style="width:80px;"/>
+        <col style="width:380px;" />
+        <col style="width:110px;" />
+      </colgroup>
+      <tr>
+        <td colspan="3"><hr/ ></td>
+      </tr>
+      <tr>
+        <td colspan="3" style="text-indent: 40px;">
+          <input type="checkbox" id="xuanyan" name="xuanyan" checked="checked"><label for="xuanyan" style="color: #C69C5A;">诚意宣言：</label>我承偌年满18岁、单身、抱着严肃的态度，真诚寻找另一半。
+        </td>
+      </tr>
+      <tr>
+        <td class="text_right">我是：</td>
+        <td>
+          <input type="radio" id="man" name="sex"><label for="man">男</label>&nbsp;&nbsp;<input type="radio" id="femail" name="sex"><label for="femail">女</label>
+        </td>
+        <td>*注册后不可修改</td>
+      </tr>
+      <tr>
+        <td class="text_right">生日：</td>
+        <td>
+          <select name="year" id="year">
+            <option value="--请选择--">--请选择--</option>
+          </select>
+          <lebel for="year">年</label>
+          <select name="year" id="nobth">
+            <option value="--请选择--"></option>
+          </select>
+          <lebel for="year">月</label>
+          <select name="year" id="day">
+            <option value="--请选择--">--请选择--</option>
+          </select>
+          <lebel for="year">日</label>
+        </td>
+        <td>*注册后不可修改</td>
+      </tr>
+      <tr>
+        <td class="text_right">身高：</td>
+        <td>
+          <select>
+            <option value="160">160</option>
+            <option value="170" selected="true">170</option>
+            <option value="180">180</option>
+            <option value="190">190</option>
+          </select>
+        </td>
+        <td>*注册后不可修改</td>
+      </tr>
+      <tr>
+        <td class="text_right">所在地区：</td>
+        <td>
+          <select>
+          </select>&nbsp;&nbsp;
+          <select>
+            <option value="--请选择--">--请选择--</option>
+          </select>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text_right">婚姻状况：</td>
+        <td>
+          <input type="radio" name="marriage" id="married"><label for="married">&nbsp;已婚&nbsp;</label>
+          <input type="radio" name="marriage" id="unmarried"><label for="unmarried">&nbsp;未婚&nbsp;</label>
+          <input type="radio" name="marriage" id="death"><label for="death">&nbsp;丧偶&nbsp;</label>
+        </td>
+        <td>*注册后不可修改</td>
+      </tr>
+      <tr>
+        <td class="text_right">学历：</td>
+        <td>
+          <select name="education_background" style="width: 100px">
+            <option value="本科">本科</option>
+            <option value="专科">专科</option>
+            <option value="大专">大专</option>
+          </select>
+        </td>
+        <td>*注册后不可修改</td>
+      </tr>
+      <tr>
+        <td class="text_right">月薪：</td>
+        <td>
+          <select name="Monthly_salary" style="width: 100px">
+            <option value="2k-5k">2000-5000元</option>
+            <option value="6k-7k">6000-7000元</option>
+            <option value="8k-9k">8000-9000元</option>
+          </select>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="3"><hr/ ></td>
+      </tr>
+      <tr>
+        <td class="text_right">注册方式：</td>
+        <td colspan="2">
+          <input type="radio" name="Registration_way" id="email" checked="true"><label for="email">&nbsp;邮箱注册&nbsp;</label>
+          <input type="radio" name="Registration_way" id="mobil"><label for="mobil">&nbsp;手机注册&nbsp;</label>
+          <span>*推荐使用手机注册，即使免费收取短信情书。</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="text_right">注册邮箱：</td>
+        <td>
+          <input type="text" />
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text_right">创建密码：</td>
+        <td>
+          <input type="text" />
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text_right">确认密码：</td>
+        <td>
+          <input type="text" />
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text_right">手机<span style="font-size: 8px; font-weight: 100;">(选填)</span>：</td>
+        <td>
+          <input type="text" />
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text_right">昵称：</td>
+        <td>
+          <input type="text" style="width: 100px;" />
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="3"><hr/ ></td>
+      </tr>
+      <tr>
+        <td class="text_right">内心独白：</td>
+        <td>
+          <ul>
+            <li>自己写</li>
+            <li>我帮你写</li>
+            <a style="float: right; text-decoration: none;" href="javascript:;">看看别人怎么写</a>
+          </ul>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <textarea style="width: 380px;" name="内心独白" cols="30" rows="10"></textarea>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <p>请输入5-1000字<span>已输入<i style="color: red;font-style: normal;font-weight: bold;">58</i>字</span>（为保证您的信息安全，请勿透露自己的姓名与联系方式）</p>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text_right">验证码：</td>
+        <td>
+          <input type="text" style="width: 100px;">
+          <img style="width:40px;" src="http://pic002.cnblogs.com/images/2012/116671/2012100516070577.png" />
+          <a href="javascript:;">点击刷新</a>
+        </td>
+        <td></td>
+      </tr>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="checkbox" checked="true" name="clause">
+          <span>同意<a href="javascript:;">世纪佳缘注册条款</a>和<a href="javascript:;">会员加入标准</a></span>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input class="btn" type="button" value="免费注册&nbsp;开启寻爱之旅" />
+        </td>
+        <td></td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

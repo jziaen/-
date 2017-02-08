@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    ul,li,div { margin:0;padding: 0; list-style: none;}
+    .side_nav { position: fixed;top: 10px;right: 10px; width: 100px;height: 200px;background: #CCC;}
+    .side_nav ul li a{ display: block; text-align: center; line-height: 60px;}
+
+    div { width: 300px;height: 1000px; margin-bottom: 10px;}
+    #list1 { background-image: url(sadftfui.jpg);}
+    #list2 { background: blue;}
+    #list3 { background: yellow;}
+  </style>
+</head>
+<body>
+  <div class="side_nav">
+    <ul>
+      <li><a href="#list1">list1</a></li>
+      <li><a href="#list2">list2</a></li>
+      <li><a href="#list3">list3</a></li>
+    </ul>
+  </div>
+  <div id="list1"></div>
+  <div id="list2"></div>
+  <div id="list3"></div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8" />
+<title>white-space_CSS参考手册_web前端开发参考手册系列</title>
+<meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
+<style>
+.test p{width:200px;border:1px solid #000;}
+.normal p{word-wrap:normal;}
+.pre p{white-space:pre;}
+.pre-wrap p{white-space:pre-wrap;}
+.pre-line p{white-space:pre-line;}
+.nowrap p{white-space:nowrap;}
+/*
+normal：
+默认处理方式。
+pre：
+用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字超出边界时不换行。可查阅pre对象
+nowrap：
+强制在同一行内显示所有文本，合并文本间的多余空白，直到文本结束或者遭遇br对象。
+pre-wrap：
+用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字碰到边界时发生换行。
+pre-line：
+保持文本的换行，不保留文字间的空白距离，当文字碰到边界时发生换行。
+ */
+</style>
+</head>
+<body>
+<ul class="test">
+	<li class="normal"><!-- 有自动换行，没有自定义空格和换行符 -->
+		<strong>normal：</strong>
+		<p>轻轻地我走了
+	正如我轻轻地来</p>
+	</li>
+	<li class="pre"><!-- 可以有自定义空格和换行符，但不能有自动换行 -->
+		<strong>pre：</strong>
+		<p>轻轻地    我走了   （这里接很多测试文字）
+	  正如我轻轻地来</p>
+	</li>
+	<li class="pre-wrap"><!-- 可以有换行符和自动换行并且保留自定义空格 -->
+		<strong>pre-wrap：</strong>
+		<p>轻轻地    我走了（这里接很多测试文字）
+	     正如我轻轻地来</p>
+	</li>
+	<li class="pre-line"><!-- 可以有换行符和自动换行，但不能有自定义空格 -->
+		<strong>pre-line</strong>
+		<p>轻轻地    我走了（这里接很多测试文字）
+	     正如我轻轻地来</p>
+	</li>
+	<li class="nowrap"><!-- 没有自定义空格换行符和自动换行 -->
+		<strong>nowrap：</strong>
+		<p>轻轻地我   走了
+	正如我轻轻地来</p>
+	</li>
+</ul>
+<!--
+    pre + pre-line = pre-wrap (有pre就表示保留换行符)
+(原生pre还保留空格)(pre-line保留自动换行)(所有pre-wrap保留自动换行、空格和换行符)
+    normal 自动换行
+-->
+</body>
+</html>
