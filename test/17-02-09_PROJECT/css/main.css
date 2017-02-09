@@ -119,13 +119,12 @@ li { list-style: none;}
 
 .network { width: 255px; padding-bottom: 30px; }
 
-.footer_ifon { width: 960px; height: 60px; margin-left: -20px; padding: 20px 20px 0 20px; background: #FFF; font-size: 10px;color: #808080; }
+.footer_ifon { width: 960px; height: 60px; margin-left: -20px; padding: 20px 20px 0 20px; background: #FFF; font-size: 9px;color: #808080; }
 .footer_ifon ul { float: left;}  /*左浮动的副导航*/
 .footer_ifon ul li { float: left; padding: 0 4px; border-left: 1px solid #808080; list-style: none; }
 .footer_ifon ul li:first-child { border: none;}
-.footer_ifon p { float: right; margin-top: 4px;}  /*有浮动的页面相关信息*/
+.footer_ifon p { float: right; margin-top: 6px;}  /*有浮动的页面相关信息*/
 .footer_ifon .copyright { text-transform: uppercase;}
-.footer_ifon .copy { font-style: normal;font-size: 20px; vertical-align: middle;}
-.footer_ifon .share { display: inline-block; width: 115px; height: 15px;line-height: 15px; text-indent: -50px; vertical-align: middle; background: url(../images/sprites.png); background-position: -220px -51px;}
+.footer_ifon .share { display: inline-block; width: 115px; height: 15px;vertical-align: middle; background: url(../images/sprites.png); background-position: -220px -51px;}
 
 /*footer end*****************************************/
