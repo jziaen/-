@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+var arr = [1,45,100,20,230,45];
+document.write(arr.sort());//对数组的元素进行排序
+document.write("<br />");
+function sortNumber(a,b){
+  return a-b;
+}
+function resortNumber(a,b){
+  return b-a;
+}
+document.write(arr.sort(sortNumber));//实现从小到大排序
+document.write("<br />");
+document.write(arr.sort(resortNumber));//实现从大到小排序
+</script>
+</body>
+</html>

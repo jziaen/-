@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  // for(var i=1;i<10;i++){
+  //   document.write("此时i="+i+"即将进入小循环"+"<hr>");
+  //   for(var j=1;j<10;j++){
+  //     document.write("我是小循环且j="+j+"<br>");
+  //   }
+  //   document.write("已脱离小循环,即将回到大循环,而此时i="+i+",在回到大循环前会进行i++");
+  //   document.write("<br /><br />");
+  // }
+
+
+
+  var a=0;
+	var b=0;
+	var c=0;
+	var d=0;
+	for (var i=1000;i<10000;i++){
+		var a=i%10 //个位
+		var b=parseInt((i/10)%10)//十位
+		var c=parseInt((i/100)%10)//百位
+		var d=parseInt(i/1000)// 千位
+		if(i==d*d*d*d+c*c*c*c+b*b*b*b+a*a*a*a){
+			document.write(i+"<br />")
+		}
+
+	}
+
+</script>
+</body>
+</html>

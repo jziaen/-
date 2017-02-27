@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  table {
+
+    text-align: center;
+    vertical-align: middle;
+    width: 300px;height: 300px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    empty-cells: hide;
+    table-layout: auto;
+
+  }
+  tr:nth-child(2n-1) {background: blue; }
+  tr:nth-child(2n) {background: gray; }
+  tr:nth-child(0) { background: yellow;}
+  /*border-spacing是应用在css文件中的清除单元格间隙的方法,不可以去负值
+    border-collapse是合并相邻单元格边框，在table中引用
+    empty-cells隐藏空单元格的边框
+    table-layout显示单元、行、列的宽度算法 fixed等宽，文本溢出  auto自动
+  */
+  td { border: 1px solid red;}
+
+  div { width:100px;height: 20px;;border: 1px solid red;}
+  </style>
+</head>
+<body>
+  <table cellspacing="10">
+    <tr>
+      <td>werwer</td>
+      <td>fdsg</td>
+      <td>sdfwe</td>
+    </tr>
+    <tr>
+      <td>21 dsaf撒旦飞洒地方</td>
+      <td>asdfsadfsadfasd</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>32</td>
+      <td><div></div></td>
+    </tr>
+    <tr>
+      <td>werwer</td>
+      <td>fdsg</td>
+      <td>sdfwe</td>
+    </tr>
+    <tr>
+      <td>21 dsaf撒旦飞洒地方</td>
+      <td>asdfsadfsadfasd</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>32</td>
+      <td><div></div></td>
+    </tr>
+  </table>
+</body>
+</html>

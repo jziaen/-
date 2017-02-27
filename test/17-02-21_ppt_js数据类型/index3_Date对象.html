@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p id="p1"></p>
+  <p id="p2"></p>
+  <script>
+    var p1 = document.getElementById("p1");
+    var p2 = document.getElementById("p2");
+    setInterval(function(){
+      var date = new Date();
+      p1.innerHTML = date;
+      d = date.getFullYear()+"年";
+      d += date.getMonth()+1+"月";
+      d += date.getDate()+"日";
+      switch(date.getDay()){
+        case 1:
+          d+="星期一 ";
+          break;
+        case 2:
+          d+="星期二 ";
+          break;
+        case 3:
+          d+="星期三 ";
+          break;
+        case 4:
+          d+="星期四 ";
+          break;
+        case 5:
+          d+="星期五 ";
+          break;
+        case 6:
+          d+="星期六 ";
+          break;
+        case 7:
+          d+="星期日 ";
+          break;
+      }
+      // d += "星期"+date.getDay()+" ";
+      d += date.getHours()+":";
+      d += addZero(date.getMinutes())+":";
+      d += addZero(date.getSeconds());
+      p2.innerHTML = d;
+      // document.write(date+"<br />");
+      // document.write(date.getFullYear()+"年");//获取年份
+      // document.write(date.getMonth()+1+"月");//获取月份
+      // document.write(date.getDate()+"日");//获取日期
+      // document.write(date.getDay()+" ");//获取星期 0为星期日
+      // document.write(date.getHours()+":");//时
+      // document.write(date.getMinutes()+":");//分
+      // document.write(date.getSeconds()+"<br />");//秒
+    },1000);
+    function addZero(time){
+      if(time < 10){
+        time = "0" + time;
+      }
+      return time;
+    }
+  </script>
+</body>
+</html>

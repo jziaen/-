@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html,body { width: 100%;height: 100%;-webkit-text-size-adjust:none;}/*可以用position：relative；padding的百分值是依照父元素的宽度计算的。*/
+    body,ul,p{margin: 0;padding: 0; background: #F0F0F0;}
+    ul { list-style: none;}
+    .wrap { width: 80%; height: 10%;margin: 0 auto; }
+    .wrap .img {float: left; width: 20%; height: 80%;padding-top: 1%;padding-right: 1%;background: url(logo.png); background-size: 100% 100%;}
+    .wrap .nav { float: right; width: 78%;height: 80%;margin-top: 1%; font-size: 12px;text-align: right; padding-right: 2%;}
+    .wrap .nav .p1 { float: right; width: 50%;min-width: 387px;}
+    .wrap .nav i { display: inline-block; width: 20px;height: 14px; background: url(sprites.png);vertical-align: top;}
+    .wrap .nav i.i1 { background-position: -2px -1px;}
+    .wrap .nav i.i2 { background-position: -23px -1px;}
+    .wrap .nav i.i3 { background-position: -45px -1px;}
+    .wrap .nav i.i4 { background-position: -67px -1px;}
+    .wrap .nav i.i5 { background-position: -89px -1px;}
+    .wrap .nav .p2 { float: right; width: 70%;margin-top: 4px;display: flex;min-width: 465px;justify-content: flex-end;}
+    .wrap .nav .p2 li {  width: 90%;}
+    .img2 { width: 100%; height: 90%; background: url(banner2.jpg); background-size: 100% 100%; }
+
+    .wrap2 { width: 100%; height:40%; background: url(background.png) repeat-x; color: white;}
+    .wrap .p3 { float: left;width: 30%;font-size: 12px;  background: transparent;}
+    .wrap .p3 li { float: left;padding: 6px 10px;}
+    .wrap .p4 { float: right;width: 50%;font-size: 12px;}
+    .wrap .p4 i { display: inline-block; background: url(sprites.png);vertical-align: middle;}
+    .wrap .p4 .j1,.wrap .p4 .j2,.wrap .p4 .j3 {  width: 35px;height: 29px;}
+    .wrap .p4 .j4,.wrap .p4 .j5,.wrap .p4 .j6 {  width: 49px;height: 29px;}
+    .wrap .p4 .j1 { background-position: 0 -20px;}
+    .wrap .p4 .j2 { background-position: -38px -20px;}
+    .wrap .p4 .j3 { background-position: -70px -20px;}
+    .wrap .p4 .j4 { background-position: -106px -20px;}
+    .wrap .p4 .j5 { background-position: -158px -20px;}
+    .wrap .p4 .j6 { background-position: -208px -20px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="img"></div>
+    <div class="nav">
+      <p class="p1">
+        <i class="i1"></i>联系我们
+        <i class="i2"></i>联系我们
+        <i class="i3"></i>联系我们
+        <i class="i4"></i>联系我们
+        <i class="i5"></i>联系我们
+      </p>
+      <ul class="p2">
+        <li>首页</li>
+        <li>关于凯瑞</li>
+        <li>凯瑞产业</li>
+        <li>凯瑞风貌</li>
+        <li>新闻动态</li>
+        <li>联系我们</li>
+      </ul>
+    </div>
+  </div>
+  <div class="img2"></div>
+  <div class="wrap2">
+    <div class="wrap">
+      <ul class="p3">
+        <li>凯瑞官方商城</li>
+        <li>资料下载</li>
+        <li>视频讲解</li>
+        <li>人力资源</li>
+      </ul>
+      <span class="p4">凯瑞环保股份有限公司 版权所有
+        <i class="j1"></i><i class="j2"></i><i class="j3"></i><i class="j4"></i><i class="j5"></i>
+      </span>
+    </div>
+  </div>
+</body>
+</html>

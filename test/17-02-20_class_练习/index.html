@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    form {
+      width: 750px;
+      height: 380px;
+      border: 1px solid #0E7414;
+    }
+    form div {
+      width: 100%;
+      height: 42px;
+      background-color: #40C750;
+      font-weight: bolder;
+      color: #FFF;
+      line-height: 42px;
+      text-indent: 1.5em;
+      background-image: url(imgs/icon.png);
+      background-repeat: no-repeat;
+      background-position: 5px;
+    }
+    #username,#password1,#password2 {
+      width: 190px;
+      height: 32px;
+      padding: 0;
+      padding-left: 7px;
+    }
+    table {
+      border-spacing: 0;
+      margin-left: 40px;
+      table-layout: auto;
+      font-size: 22px;
+      empty-cells: hide;
+    }
+    table td { padding: 8px 0;}
+    table tr td:nth-child(1){
+      text-align: right;
+    }
+    table tr td:nth-child(2){
+      text-align: left;
+    }
+    em {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: url(imgs/right.png);
+    }
+    #btn {
+      width: 215px;
+      height: 47px;
+      border-radius: 7px;
+      border: 1px solid #409D20;
+      font-size: 0;
+      background: url(imgs/submit.png) no-repeat;
+      background-size: cover;
+    }
+  </style>
+  <script>
+    window.onload = function(){
+      var oForm = document.getElementsByTagName("form")[0];
+      var oUsername = document.getElementById("username");
+      var oPassword1 = document.getElementById("password1");
+      var oPassword2 = document.getElementById("password2");
+      var oSex = document.getElementsByName("sex");
+      var oDate = document.getElementById("date");
+      var oBtn = document.getElementById("btn");
+      oForm.onsubmit = function(){
+        if(oPassword1.value == oPassword2.value){
+          for(var i=0;i<oSex.length;i++){
+            if(oSex[i].checked){
+              switch (oSex[i].value) {
+                case "male":
+                  alert(oUsername.value+" 先生，感谢您的提交。");
+                  break;
+                case "female":
+                  alert(oUsername.value+" 女士，感谢您的提交。");
+                  break;
+                default:
+                  alert(oUsername.value+" 感谢您的提交。");
+              }
+            }
+          }
+        }else{
+          alert("密码不相同");
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <form>
+    <div class="div1">会员注册</div>
+    <table>
+      <tr>
+        <td>
+          <label for="username">用户名:</label>
+        </td>
+        <td>
+          <input id="username" type="text" pattern="[0-9a-zA-Z]{6,16}" required="required" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="password1">密码:</label>
+        </td>
+        <td>
+          <input id="password1" type="password" pattern="[0-9a-zA-Z]{6,16}" required="required" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="password2">确认密码:</label>
+        </td>
+        <td>
+          <input id="password2" type="password" pattern="[0-9a-zA-Z]{6,16}" required="required" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="baomi">性别:</label>
+        </td>
+        <td align="left">
+          <input type="radio" name="sex" value="baomi" id="baomi" checked="checked" /><label for="baomi">保密</label>
+          <input type="radio" name="sex" value="male" id="male" /><label for="male">男</label>
+          <input type="radio" name="sex" value="female" id="female" /><label for="female">女</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="date">出生日期:</label>
+        </td>
+        <td align="left">
+          <input id="date" type="date" required="required" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+
+        </td>
+        <td align="left">
+          <input id="btn" type="submit" value="注册提交!"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

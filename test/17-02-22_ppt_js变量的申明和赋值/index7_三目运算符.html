@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input id="input1" type="text" value="25" />
+  <p id="p1"></p>
+  <script>
+    var input1 = document.getElementById("input1");
+    var p1 = document.getElementById("p1");
+    var age = input1.value;
+    var o = "";
+    input1.onchange = function(){
+      age = input1.value;
+      o = age>18?"您成年了":"您未成年";
+      p1.innerHTML = o;
+    }
+    o = age>18?"您成年了":"您未成年";
+    p1.innerHTML = o;
+
+  </script>
+</body>
+</html>

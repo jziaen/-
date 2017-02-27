@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+    body {
+      font-size: 30px;
+    }
+    input,button {
+      border: none;
+      outline: none;
+    }
+    #hours,#minutes,#seconds {
+      width: 40px;
+      padding: 10px 4px 10px 3px;
+      text-align: center;
+      font-size: 30px;
+      border: 1px solid #EFEFEF;
+      border-radius: 3px;
+      background: #EFEFEF;
+      color: #666;
+    }
+    #btn {
+      display: block;
+      margin-top: 10px;
+    
+      padding: 6px 10px;
+      color: #FFF;
+      font-size: 18px;
+      font-weight: bold;
+      background: #F65588;
+      vertical-align: 5px;
+      border: 1px solid #CCC;
+      border-radius: 5px;
+    }
+  </style>
+  <script>
+    window.onload = function(){
+      var hours = document.getElementById("hours");
+      var minutes = document.getElementById("minutes");
+      var seconds = document.getElementById("seconds");
+      var btn = document.getElementById("btn");
+      var oP = document.getElementById("p1");
+      btn.onclick = function(){
+        h = parseInt(hours.value);
+        m = parseInt(minutes.value);
+        s = parseInt(seconds.value);
+        if(h>=0 && m>=0 && s>=0 && h<24 && m<60 && s<60){
+          /*v0.1
+          if(s==59){
+            s = "00";
+            if(m==59){
+              m="00";
+              if(h==23){
+                h="00";
+              }else{
+                h++;
+              }
+            }else{
+              m++;
+            }
+          }else{
+            s++;
+          }
+          */
+          /*v0.2
+          if(s==59 && m==59){
+            s = 0;
+            m = 0;
+            if(h==23){
+              h = 0;
+            }else{
+              h++;
+            }
+          }else{
+            if(s==59){
+              s = 0;
+              m++;
+            }else{
+              s++;
+            }
+          }
+          */
+
+         //v0.3 目前最简版本，应该选判断一般情况再判断特殊情况
+          s++;
+          if(s==60){
+            s = 0;
+            m++;
+          }
+          if(m==60){
+            m=0;
+            h++;
+          }
+          if(h==24){
+            h=0;
+          }
+
+
+          h<10?h="0"+h:h;
+          m<10?m="0"+m:m;
+          s<10?s="0"+s:s;
+
+          oP.innerHTML = "下一秒的时间是"+h+":"+m+":"+s;
+          hours.value = h;
+          minutes.value = m;
+          seconds.value = s;
+        }else{
+          alert("请输入正确的时间");
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+<input id="hours" type="text" /><span>:</span><input id="minutes" type="text" /><span>:</span><input id="seconds" type="text" />
+<button id="btn">计算时间</button>
+<p id="p1"></p>
+</body>
+</html>

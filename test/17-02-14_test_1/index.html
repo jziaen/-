@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .wrap,.wrap1 { width: 400px; height: auto; margin-top: 10px;border: 1px solid red;}
+      .wrap:after { content:"";clear: both; display: block;}  /*消除外边框塌陷， 可以使用display:block/flex/table-cell,但是table-cell会使得为元素有一个初始的18行高*/
+    .wrap div { width: 100px;height: 100px; border: 1px solid #CCC;}
+      .div1,.clear { float: left;}
+      .clear { clear: both;}
+
+    .wrap1 ul { margin: 0;padding-left: 20px;}/*ul的margin有上下16像素 ，padding-left 40像素用于展示list-style, li只有高度18像素*/
+    .wrap1 dl { margin: 0;}/*dl的margin上下16px，dd margin左边 40px*/
+    .wrap1 dd { margin-left: 0;}/*dl的margin上下16px，dd margin左边 40px*/
+
+    .wrap2 { background: #D66464;}
+    .clearfix:after { content: "";clear: both;display: block;}
+    .wrap2 .left { float: left; width: 100px;background: #00F;height: 180px;}
+    .wrap2 .right { float: right;width: 150px;background: #0F0;height: 200px;}
+    .wrap2 .center { background: #CCC; margin-left: 110px;margin-right: 160px;height: 150px;}
+
+    .wrap3 { background: #FBD570;margin-left: 100px;margin-right: 150px;}
+    .wrap3 .center { background:#B373DA; height: 150px;float: left;width: 100%;}
+    .wrap3 .left { float: left;width: 100px;height: 180px; margin-left: calc(-100% - 100px); background: #00F;}
+    .wrap3 .right { float: right;width: 150px;height: 200px; background: #0F0;margin-right: -150px; }
+
+    .wrap4 ul { font-size: 0;white-space: nowrap;}
+    .wrap4 ul li { display: inline-block; border: 1px solid #CCC;padding: 7px 20px;background:#D43;font-size: 16px; }
+
+    .wrap5 { position: relative; width: 1000px; border: 1px solid #000;}
+    .wrap5 > div { background-color: #FD5; z-index: 1;}
+    .wrap5 > img { position: relative; z-index: -1;right: -150px;}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="div1"></div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="wrap1">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <dl>
+      <dt>asd</dt>
+      <dd>as</dd>
+    </dl>
+  </div>
+
+  <div class="wrap2 clearfix"> <!-- 圣杯布局 -->
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="center"></div>
+  </div>
+
+  <div class="wrap3 clearfix"> <!-- 双飞翼布局 -->
+    <div class="center"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+  <div class="wrap4">
+    <ul>
+      <li>菜单一</li>
+      <li>菜单二</li>
+      <li>菜单三</li>
+      <li>菜单四</li>
+    </ul>
+  </div>
+  <div class="wrap5">
+    <div><img src="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg"></div>
+  </div>
+</body>
+</html>

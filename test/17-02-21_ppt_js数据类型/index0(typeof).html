@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    "use strict"
+    window.onload = function(){
+      /*字符串*/
+      var string = "阿斯兰的咖啡就撒了";
+      document.write(typeof(string));
+      document.write("<br />");
+      /*数字*/
+      var number = 123e-5;
+      document.write(typeof(number));
+      document.write("<br />");
+      /*布尔值*/
+      var boolean = true;
+      document.write(typeof(boolean));
+      document.write("<br />");
+      /*数组*/
+      var array = new Array();
+      array[0] = "Audi";
+      array[1] = "BMW";
+      array[2] = "Volvo";
+      document.write(typeof(array));
+      document.write(" 数组中的值有" + array[0] + "&nbsp;" + array[1] + " " + array[2] + "总共" + array.length + "个");
+      document.write("<br />");
+      /*对象*/
+      var object = {
+        firstname:"Bill",
+        lastname:"Gates"
+      }
+      document.write(object.firstname+" "+object["lastname"]);
+      document.write("<br />");
+      document.write(typeof(object));
+      document.write("<br />");
+      /*undefined*/
+      var un;
+      document.write(typeof(un));
+      document.write("<br />");
+      /*null*/
+      var nu = null;
+      document.write(typeof(nu));
+      //null可以视为空对象，可清空变量
+
+      /*常量*/
+      const a = 10;
+      alert(a);
+
+
+      /*变量测试*/
+      var x = "1";
+      var y = 2;
+      alert(x-y);
+
+      /*函数*/
+      function test(){
+        alert("测试");
+      }
+      document.write(typeof test);//function
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>

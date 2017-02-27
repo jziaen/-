@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  var arr = [6,10,8,4,1,9,3,2,7,5];
+  function bubbleSort(array){
+    var time = array.length-1;//time=9
+    var cache = 0;
+    for(var i=0;i<time;i++){
+      for(var j=0;j<time-i;j++){
+        if(arr[j]>arr[j+1]){
+          cache = arr[j];
+          arr[j] =  arr[j+1];
+          arr[j+1] = cache;
+        }
+        console.log(array);
+      }
+      document.write(array+"<br/>");
+      console.log("<br/>");
+    }
+    return array;
+  }
+  bubbleSort(arr);
+  </script>
+</body>
+</html>

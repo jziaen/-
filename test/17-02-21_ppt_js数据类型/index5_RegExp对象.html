@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RegExp()</title>
+</head>
+<body>
+  <div id="p">
+    hi,hellohi hi luck
+  </div>
+<script>
+  var str=document.getElementById("p").innerHTML;
+  var patt1 = ^\hi.*\b$      //匹配以斜杠作为开始和结束
+  //i表示不区分大小写
+  //g表示全局匹配，默认找到第一个值就返回结果
+  //m表示执行多行匹配
+  document.write(str.match(patt1));
+
+var str = "123\r\n456";
+
+var reg1 = new RegExp("^456$", "m"); // true
+
+var reg2 = new RegExp("^456$", ""); // false
+
+var reg3 = new RegExp("456", "m"); // true
+
+var reg4 = new RegExp("456", ""); // true
+
+alert(reg1.test(str) + "\r\n" + reg2.test(str) + "\r\n" + reg3.test(str) + "\r\n" + reg4.test(str));
+
+var str5 =
+</script>
+</body>
+</html>

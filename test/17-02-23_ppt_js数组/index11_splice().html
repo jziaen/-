@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+var colors = ["red","green","blue"];
+var removed = colors.splice(0,1); //删除第一项
+document.write(colors+"/"+removed);//green,blue/red
+document.write("<br />");
+removed = colors.splice(1,0,"yellow","orange");//从位置1开始插入2项
+document.write(colors+"/"+removed);//green,yellow,orange/空数组
+document.write("<br />");
+removed = colors.splice(1,1,"red","purple");//从位置1删除一项，然后插入2项
+document.write(colors+"/"+removed);//green,red,purple,orange/yellow
+document.write("<br />");
+//第一个项表示位置，第二个项表示要删除的项数。
+
+</script>
+</body>
+</html>

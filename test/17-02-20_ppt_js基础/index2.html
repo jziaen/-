@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    input {padding: 10px 20px; border: 1px solid #CCC;border-radius: 5px;outline: none;   color: #FFF;cursor: pointer;}
+    input:hover { background: #CCC; color: #000;  }
+  </style>
+  <script>
+    window.onload = function(){
+      var btn = document.getElementById("btn");
+      btn.onclick = function(){
+        alert("第一个按钮document.getElementById");
+      }
+      var oldBGColor = btn.getAttribute("background");
+      var oldColor = btn.getAttribute("color");
+      btn.onmouseover = function(){
+        btn.style.backgroundColor = "red";
+        btn.style.color = "blue";
+      }
+      btn.onmouseout = function(){
+        btn.style.backgroundColor = oldBGColor;
+        btn.style.color = oldColor;
+      }
+      var newBTN1 = document.getElementsByName("newBTN1")[0];
+      newBTN1.onclick = function(){
+        alert("第二个按钮document.getElementsByName");
+      }
+      var btns = document.getElementsByTagName("input");
+      btns[2].onclick = function(){
+        alert("第三个按钮document.getElementsByTagName");
+      }
+    }
+  </script>
+</head>
+<body>
+  <input type="button" id="btn" value="弹出消息框1">
+  <input type="button" name="newBTN1" value="弹出消息框2">
+  <input type="button" name="newBTN2" value="弹出消息框3">
+</body>
+</html>

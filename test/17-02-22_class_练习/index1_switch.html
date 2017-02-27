@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input id="txt" type="text">
+  <input id="btn" type="submit" value="点击查询">
+<script>
+var txt = document.getElementById("txt");
+var btn = document.getElementById("btn");
+
+btn.onclick = function(){
+  var val = txt.value.toLowerCase();
+  switch(val){
+    case "a":
+      alert("85-100");
+      break;
+    case "b":
+      alert("60-85");
+      break;
+    case "c":
+      alert("30-60");
+      break;
+    case "d":
+      alert("0-30");
+      break;
+    default:
+      alert("没有这个等级,请输入A、B、C、D");
+  }
+}
+</script>
+</body>
+</html>

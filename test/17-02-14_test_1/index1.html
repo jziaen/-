@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .box { }
+  .box > div { width: 400px;position: relative; background-color: blue; z-index: 1; }    /* 此时该div是普通元素，z-index无效 */
+  .box > div > img {position: relative; z-index: -1; right: -150px; }    /* 注意这里是负值z-index */
+
+  .box1 { width:400px; background-color: blue;opacity: 0.5;}
+  .box1 > img { position: relative; z-index: -1;right: -150px;}
+
+  .box2 { width:400px; background-color: blue;transform: rotate(15deg);}
+  .box2 > img { position: relative; z-index: -1;right: -150px;}
+
+  .box3 { width:400px; background-color: blue;mix-blend-mode: darken;}
+  .box3 > img { position: relative; z-index: -1;right: -150px;}
+
+  .box4 { width:400px; background-color: blue;-webkit-filter: blur(5px);}
+  .box4 > img { position: relative; z-index: -1;right: -150px;}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div>
+    	<img src="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg">
+    </div>
+  </div>
+
+  <div class="box1">
+    <img src="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg">
+  </div>
+  <div class="box2">
+    <img src="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg">
+  </div>
+  <div class="box3">
+    <img src="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg">
+  </div>
+  <div class="box4">
+    <img src="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg">
+  </div>
+</body>
+</html>

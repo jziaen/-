@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  * { margin: 0;padding: 0;}
+  form { width: 80%; border: 1px solid #CCC; overflow: hidden; clear: both;}
+  .f1 { width: 60%;float: left;}
+  .f2 { width: 40%;float: right;overflow: hidden;}/*fieldset无论宽度设置多小都不能小于其内容的实际宽度*/
+  legend { padding:10px 20px; border: 1px dashed red;text-align: center; }/*legend可以应用text-align:center;*/
+  </style>
+</head>
+<body>
+  <form action="#" method="post">
+    <fieldset class="f1">
+      <legend>开始登陆</legend>
+      <label for="name">姓名：</label><input type="text" id="name" placeholder="老王" /><br >
+      <label for="password">密码：</label><input type="password" id="password" placeholder="请输入您的密码" />
+
+      <label for="email">邮箱：</label><input type="email" />
+      <input type="submit" >
+    </fieldset>
+    <fieldset class="f2">
+      <legend>
+        <input type="radio" name="sex" id="male"><label for="male">男</label>
+        <input type="radio" name="sex" id="female"><label for="female">女</label>
+        <input type="radio" name="sex" id="baomi" checked="checked"><label for="baomi">保密</label>
+      </legend>
+      邮箱：<input type="email" required="required" placeholder="请输入您的邮箱"/><br> <!-- required设置必填选项 -->
+      手机：<input type="text" placeholder="请输入您的电话号码" pattern="[0-9a-zA-Z]{6,10}" />
+      上传文件：<input type="file" multiple="true" accept="image/jpg" placeholder="请选择文件" />
+      <!-- file上传文件 multiple 可以定义多选， accept可以限制文件类型-->
+    </fieldset>
+  </form>
+
+</body>
+</html>
