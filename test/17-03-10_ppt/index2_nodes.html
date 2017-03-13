@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+  window.onload = function(){
+    console.log(document.body.children);//子节点，不包含空节点,返回包含7个节点的数组
+    console.log(document.body.childNodes);//子节点，包含空节点。包含7个实节点，以及8个节点组成的长度为15的数组
+
+
+    console.log(document.body.firstChild);//返回第一个节点，空节点(换行)
+    console.log(document.body.firstElementChild);
+
+    console.log(document.body.lastChild);
+    console.log(document.body.lastElementChild);
+
+    console.log(document.getElementById("xiaoming").nextSibling);//下一个兄弟节点
+    console.log(document.getElementById("xiaoming").nextElementSibling);//下一个兄弟元素节点
+
+    console.log(document.getElementById("xiaoming").previousSibling);//上一个兄弟节点
+    console.log(document.getElementById("xiaoming").previousElementSibling);
+
+    console.log(document.getElementById("hanFather").parentNode);//返回直接父级
+    console.log(document.getElementById("hanFather").offsetParent);//返回第一个有定位属性的父级 || body
+  }
+  </script>
+</head>
+<body>
+  <h1>同学们：</h1>
+  <div class="boys" id="xiaoming">小明</div>
+  <div class="boys">李雷</div>
+  <div class="girls">韩梅梅</div>
+  <div class="parents_wrap">
+  	<div>&nbsp;&nbsp;韩梅梅父母：</div>
+    <div class="parents" style="position: relative;">
+    	<div id="hanFather">&nbsp;&nbsp;&nbsp;&nbsp;父：韩小东</div>
+    	<div>&nbsp;&nbsp;&nbsp;&nbsp;母：刘琼瑶</div>
+    </div>
+  </div>
+  <div class="girls">刘晓玲</div>
+  <div class="girls">乔宛如</div>
+</body>
+</html>

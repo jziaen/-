@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="text/javascript">
+  window.onload = function(){
+    console.log(document.body.nodeType);//1
+    console.log(document.body.nodeName);//BODY
+    console.log(document.head.nodeType);//1
+    console.log(document.head.nodeName);//HEAD
+    var h1 = document.getElementById("title");
+    console.log(h1.innerHTML);//标题1
+    //innerHTML返回标签内内容
+    console.log(h1.childNodes[0].nodeType);//3
+    console.log(h1.childNodes[0].nodeName);//#text
+    console.log(h1.nodeName);//H1
+    console.log(h1.childNodes[0].nodeValue);//标题1
+
+    var oDiv = document.getElementsByClassName("xiaoming")[0];
+    console.log(oDiv.innerHTML);//<li><a>测试:打印我是小明</a></li>
+    console.log(oDiv.childNodes[1].innerHTML);//<a>测试:打印我是小明</a>
+    console.log(oDiv.childNodes[1].childNodes[1].innerHTML);//测试:打印我是小明
+    console.log(oDiv.childNodes[1].childNodes[1].childNodes[0].nodeValue);//测试:打印我是小明
+    console.log(oDiv.childNodes[1].childNodes[1].childNodes[0].nodeType);//3
+    console.log(oDiv.childNodes[1].childNodes[1].childNodes[0].nodeName);//#text
+  }
+  </script>
+</head>
+<body>
+  <h1 id="title">标题1</h1>
+  <p>文本</p>
+  <input type="text" value="213" />
+  <input type="button" value="213" />
+  <div class="xiaoming">
+    <li>
+      <a>测试:打印我是小明</a>
+    </li>
+  </div>
+</body>
+</html>

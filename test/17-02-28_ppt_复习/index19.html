@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<input id="txt" type="text" />
+<input type="button" value="提交" id="btn" />
+<script type="text/javascript">
+window.onload = function(){
+  var btn = document.getElementById("btn");
+  btn.onclick = function(){
+    var index=0,txt = parseInt(document.getElementById("txt").value);
+    for(var i=2;i<txt+1;i++){
+      if(txt%i!=0){
+        index++;
+        if(index == txt-2){
+          alert(txt+"是质数");
+        }else{
+          alert(txt+"不是质数");
+          
+        }
+
+      }else{
+        alert(txt+"不是质数");
+        break;
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>

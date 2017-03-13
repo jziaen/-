@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    fieldset > label { display: block;margin-bottom: 10px;}
+
+  </style>
+</head>
+<body>
+<fieldset>
+  <legend>江俊臻</legend>
+  <label for="username">姓名：
+    <input id="username" type="text" placeholder="请输入文字" />
+  </label>
+  <label for="password">密码：
+    <input id="password" type="text" />
+  </label>
+  <input type="submit" value="提交" />
+  <input type="reset" value="重置" />
+</fieldset>
+<fieldset>
+  <legend>江俊臻</legend>
+  <label>性别：
+    <label for="female">女
+      <input type="radio" id="female" name="sex" />
+    </label>
+    <label for="male">男
+      <input type="radio" id="male" name="sex" />
+    </label>
+  </label>
+  <label for="year">出生年月：
+    <select id="year">
+      <option value="2001">2001</option>
+      <option value="2002">2002</option>
+    </select>
+    <label for="year">年</label>
+    <select id="month">
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    <label for="month">月</label>
+  </label>
+  <label for="hobby">爱好：
+    <input id="yuedu" type="checkbox" name="female"><label for="yuedu">阅读</label>
+    <input id="lvyou" type="checkbox" name="female"><label for="lvyou">旅游</label>
+    <input id="yinyue" type="checkbox" name="female"><label for="yinyue">音乐</label>
+    <input id="zhai" type="checkbox" name="female"><label for="zhai">宅</label>
+  </label>
+  <label for="jianyi">我的建议：
+    <textarea id="jianyi" cols="30" rows="5"></textarea>
+  </label>
+  <label for="filter">
+    <input type="file">
+  </label>
+</fieldset>
+</body>
+</html>

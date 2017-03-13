@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function Students(name,age,grade,hobby){
+    this.name = name;
+    this.age = age;
+    this.grade = grade;
+    this.hobby = hobby;
+  }
+  Students.prototype.getName  = function(){ return this.name};
+  Students.prototype.getAge   = function(){ return this.age};
+  Students.prototype.getGrade = function(){ return this.grade};
+  Students.prototype.getHobby = function(){ return this.hobby};
+
+  Students.prototype.setName  = function(name){ this.name = name}
+  Students.prototype.setAge   = function(age){ this.name = age}
+  Students.prototype.setGrade = function(grade){ this.name = grade}
+  Students.prototype.setHobby = function(hobby){ this.name = hobby}
+
+  var xiaoming = new Students("小明",12,"2班","二");
+  document.write(xiaoming.name + xiaoming.getAge() + xiaoming.getGrade() + xiaoming.getHobby());
+  console.log(xiaoming.name === xiaoming.getName());
+</script>
+</body>
+</html>

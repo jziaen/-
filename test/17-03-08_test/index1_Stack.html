@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  /**
+   * 创建一个类：栈
+   */
+  function Stack(){
+    var item = [];
+    this.push = function(element){
+      item.push(element);
+    }
+    this.pop = function(){
+      return item.pop();
+    }
+    this.peek = function(){
+      return item[item.length-1];
+    }
+    this.isEmpty = function(){
+      return item.length == 0;
+    }
+    this.clear = function(){
+      item = [];
+    }
+    this.size = function(){
+      return item.length;
+    }
+    this.print = function(){
+      console.log(item.toString());
+    }
+  }
+
+  // var stack = new Stack();
+  // console.log(stack.isEmpty());
+  // stack.push(5);
+  // stack.push(8);
+  // console.log(stack.peek());
+  // stack.push(11);
+  // console.log(stack.size());
+  // console.log(stack.isEmpty());
+  // stack.push(15);
+  // stack.pop();
+  // stack.pop();
+  // console.log(stack.size());
+  // stack.print();
+
+  /**
+   * 将十进制数转化为二进制数
+   * @param  {[type]} decNumber [十进制数]
+   * @return {[type]}           [二进制数]
+   */
+  function divideBy2(decNumber){
+    var remStack = new Stack(),
+        rem,
+        binaryString = "";
+    while(decNumber>0){
+      rem = Math.floor(decNumber%2);
+      remStack.push(rem);
+      decNumber = Math.floor(decNumber/2);
+    }
+    // remStack.print();
+    while(!remStack.isEmpty()){
+      binaryString += remStack.pop().toString();
+    }
+    return binaryString;
+  }
+  /**
+   * 转换为二进制
+   * @param  {[type]} decNumber 原始数字
+   * @param  {[type]} base      进制数（2、6、8、16）
+   * @return {[type]}           返回的数字
+   */
+  function baseConverter(decNumber,base){
+    var remStack = new Stack(),
+        rem,
+        baseString = '',
+        digits = '0123456789ABCDEF';
+    while(decNumber > 0){
+      rem = Math.floor(decNumber % base);
+      remStack.push(rem);
+      decNumber = Math.floor(decNumber / base);
+    }
+
+    while(!remStack.isEmpty()){
+      baseString += digits[remStack.pop()];
+    }
+    return baseString;
+  }
+  console.log(baseConverter(100345,2));//11000011111111001
+  console.log(baseConverter(100345,8));//303771
+  console.log(baseConverter(100345,16));//187F9
+</script>
+</body>
+</html>

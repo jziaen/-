@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="class_div1" id="id_div1" style="background: red; height: 100px;" aaa="dsafkjhsf"></div>
+<script type="text/javascript">
+  var div1 = document.getElementById("id_div1");
+  console.log(div1.getAttribute("aaa"));//dsafkjhsf
+  div1.onclick = function(){
+    div1.setAttribute("style","background: blue;height: 100px;");
+    console.log(div1.getAttribute("aaa"));//aaa
+  }
+  div1.onmouseout = function(){
+    div1.removeAttribute("style");
+    console.log(div1.getAttribute("style"));
+  }
+
+</script>
+</body>
+</html>

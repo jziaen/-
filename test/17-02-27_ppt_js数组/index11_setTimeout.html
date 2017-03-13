@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function hello0(){
+    alert("hello");
+  }
+  function hello1(){
+    alert("world");
+  }
+  // alert(hello);
+  // window.setTimeout(hello,3000);
+  //setTimeout是全局的方法（即window的方法）,所以可以通过window.进行调用
+  //alert(hello)输出的是hello这个函数的一个字符串
+  //window.setTimeout("hello()",3000); 也可以调用后加上双引号
+  //window.setTimeout("alert('第一个警告窗口!');alert('第二个警告窗口!')",500);
+  //可以输入多个函数，函数之间以分号相隔。
+  for(var i=0;i<2;i++){//直接运行2遍，3000时间设置没有生效
+    window.setTimeout("hello"+i+"()",3000);
+  }
+</script>
+</body>
+</html>

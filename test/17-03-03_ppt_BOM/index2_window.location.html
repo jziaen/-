@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<button>window.reload()重新加载</button><br>
+<button>window.href获取当前</button><br>
+<button>window.location.href设置地址,相当于在当前窗口加载新文档，同assign</button><br>
+<button>window.location.assign在当前窗口加载新文档</button><br>
+<button>window.location.replace替换文档,不产生历史记录,无法返回</button>
+
+<script>
+var btn = document.getElementsByTagName("button");
+btn[0].onclick = function(){
+  location.reload();//重新刷新当前页面
+  // window.document.location.reload();
+}
+btn[1].onclick = function(){
+  alert(location.href);
+}
+btn[2].onclick = function(){
+  location.href = "http://www.baidu.com";
+  location.href = "index5_history.html";
+}//设置地址,相当于在当前窗口加载新文档，同assign
+btn[3].onclick = function(){
+  window.location.assign("http://www.baidu.com");
+  window.location.assign("index5_history.html");
+}//在当前窗口加载新文档
+btn[4].onclick = function(){
+  window.location.replace("http://www.baidu.com");
+  // window.location.replace("index5_history.html");
+  //替换文档,不产生历史记录，无法回到原窗口
+}
+alert("这是第一次刷新");
+</script>
+</body>
+</html>

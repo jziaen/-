@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+var str1 = "您好";
+var str2 = 123;
+var str3 = "123";
+var str4 = true;
+var str5 = "true";
+var str = str1+str2;//您好123
+console.log(str);
+var str = str1+str3;//您好123
+console.log(str);
+var str = str1+str4;//您好true
+console.log(str);
+var str = str1+str5;//您好true
+console.log(str);
+var str = str2+str3;//123123,数字加字符串出来的一定是字符串
+console.log(str);
+var str = str2+str4;//124
+console.log(str);
+//boolean在和number类型进行运算时，会把Boolean转化为number类型。
+//true代表number是1，false代表number是0。即123+1
+var str = str3+str4;//123true,string类型相加时会进行字符串拼接
+console.log(str);
+var str = str3-str4;//122
+console.log(str);
+//string类型与Boolean减法，string和Boolean会转化为number，__但string必须是纯数字__
+var str = str1-str4;//NAN
+console.log(str);
+var s = 9;
+console.log(parseFloat(s));
+</script>
+</body>
+</html>

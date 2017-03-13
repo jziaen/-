@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    ul { list-style: none; padding: 0;margin: 0;}
+    .main_menu { position: relative; float: left; padding: 5px 10px; margin-right: 8px;background: #CCC;}
+
+    .sub_menu { position: absolute; top: 30px;display: none;}
+  </style>
+</head>
+<body>
+<ul class="nav">
+  <li class="main_menu">
+    导航1
+    <ul class="sub_menu">
+      <li>菜单1</li>
+      <li>菜单2</li>
+    </ul>
+  </li>
+
+  <li class="main_menu">
+    导航2
+    <ul class="sub_menu">
+      <li>菜单1</li>
+      <li>菜单2</li>
+    </ul>
+  </li>
+  <li class="main_menu">
+    导航3
+    <ul class="sub_menu">
+      <li>菜单1</li>
+      <li>菜单2</li>
+    </ul>
+  </li>
+  <li class="main_menu">
+    导航4
+    <ul class="sub_menu">
+      <li>菜单1</li>
+      <li>菜单2</li>
+    </ul>
+  </li>
+</ul>
+<script type="text/javascript">
+  var mainMenu = document.getElementsByClassName("main_menu");
+  for(var i=0;i<mainMenu.length;i++){
+    // mainMenu[i].onclick = function(){
+    //   this.childNodes[1].style.display = "block";
+    // }
+    mainMenu[i].onmouseover = function(){
+      this.childNodes[1].style.display = "block";
+    }
+    mainMenu[i].onmouseout = function(){
+      this.childNodes[1].style.display = "none";
+    }
+  }
+</script>
+</body>
+</html>

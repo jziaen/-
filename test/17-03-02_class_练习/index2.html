@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+  </style>
+  <script type="text/javascript">
+    window.onload = function(){
+      var oBtn1 = document.getElementById("btn1");
+      var oBtn2 = document.getElementById("btn2");
+      var oDiv = document.getElementById("div1");
+      var timer = null;
+      var left = 0,speed = 0;
+      oBtn1.onclick = function(){
+        clearInterval(timer);
+
+        timer = setInterval(function(){
+
+          if(oDiv.offsetLeft<=0){
+            speed = 10;
+          }
+          if(oDiv.offsetLeft>window.innerWidth-parseInt(oDiv.style.width)-7){
+            speed = -speed;
+          }
+          oDiv.style.left = oDiv.offsetLeft+speed+"px";
+        },30);
+      }
+      oBtn2.onclick = function(){
+        clearInterval(timer);
+      }
+    }
+  </script>
+</head>
+<body>
+<button id="btn1">移动</button>
+<button id="btn2">停止</button>
+<div id="div1" style="width: 100px;height: 100px;background: pink;position: absolute;left: 0;"></div>
+
+</body>
+</html>

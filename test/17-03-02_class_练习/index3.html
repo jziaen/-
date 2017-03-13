@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<!-- <button id="btn">切换颜色</button> -->
+<script type="text/javascript">
+  var oInput1 = document.createElement("input");
+  var oInput2 = document.createElement("input");
+
+  var txt1 = document.createTextNode("行数：");
+  var txt2 = document.createTextNode("列数：");
+
+  oInput1.style.width = "40px";
+  oInput2.style.width = "40px";
+
+  document.body.appendChild(oInput1);
+  document.body.appendChild(oInput2);
+  document.body.insertBefore(txt1,oInput1);
+  document.body.insertBefore(txt2,oInput2);
+
+
+  var oButton = document.createElement("button");
+  oButton.setAttribute("id","btn");
+  oButton.innerHTML = "绘制表格";
+  document.body.appendChild(oButton);
+  var btn = document.getElementById("btn"),colorArea = document.getElementById("color_area");
+
+
+  var color = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"];
+  function randomNum(){
+    var a,b="#";
+    for(var i=0;i<6;i++){
+      a = color[Math.floor(Math.random()*color.length)];
+      b+=a;
+    }
+    return b;
+  }
+  btn.onclick = function(){
+    var col = parseInt(document.getElementsByTagName("input")[0].value);
+    var row = parseInt(document.getElementsByTagName("input")[1].value);
+    console.log(col,row);
+    createTable(col,row);
+  }
+  function createTable(col,row){
+    var oTable = document.createElement("table");
+    for(var i=0;i<col;i++){
+      // document.write("<tr>");
+      var oTr = document.createElement("tr");
+      for(var j=0;j<row;j++){
+        // document.write("<td style='width:50px;height:50px;background-color:"+randomNum()+";'></td>");
+        var oTd = document.createElement("td");
+
+        oTd.setAttribute("width","50px");
+        oTd.setAttribute("height","50px");
+        oTd.setAttribute("bgColor",randomNum());
+
+        oTr.appendChild(oTd);
+      }
+      // document.write("</tr>");
+
+
+      oTable.appendChild(oTr);
+    }
+    // document.write("</table>");
+    document.body.appendChild(oTable);
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .content{
+    	width:800px;
+    	margin:50px auto;
+    }
+    input, select{
+    	border:1px solid #a9a9a9;
+    	height:34px;
+    	line-height:34px;
+    	width:550px;
+    	margin-bottom:20px;
+    	padding-left:5px;
+    }
+    label{
+    	width:120px;
+    	text-align:right;
+    	display:inline-block;
+    }
+    #registerBtn{
+    	background:#3498db;
+    	color:#fff;
+    	font-size:14px;
+    	text-align:center;
+    	width:100px;
+    	line-height:34px;
+    	border:none 0;
+    	cursor:pointer;
+    	margin:20px 20px 0 0;
+    	margin-left:120px;
+    }
+    #tipContent{
+    	padding:20px 0 0 30px;
+    	text-align:center;
+    }
+    .btns{
+    	background:#5bc0de;
+    	width:100px;
+    	height:20px;
+    	margin:20px;
+    	padding:40px;
+    	cursor:pointer;
+    	text-align:center;
+    	color:#fff;
+    	margin-left:72px;
+    }
+    .btns:nth-child(odd){
+    	background:#337ab7;
+    }
+  </style>
+  <script>
+  window.onload = function(){
+    document.getElementById("name").onfocus = function(){
+      document.getElementById("name").style.backgroundColor = "#337ab7";
+      this.value = "111";
+      document.getElementById("tipContent").innerHTML = "失去焦点";
+    }
+
+
+  }
+  function aaa(){
+    document.getElementById("name").style.backgroundColor = "";
+    document.getElementById("tipContent").innerHTML = "获得焦点";
+  }
+  function bbb(){
+    var bb = document.getElementById("sex").value;
+    document.getElementById("tipContent").innerHTML = bb;
+  }
+  function ccc(){
+    alert("danji");
+  }
+  function ddd(){
+    alert("shuangji");
+  }
+
+  document.onkeydown = function(ev){
+    var ev = ev || window.event;
+    console.log(String.fromCharCode(ev.keyCode));
+  }
+  document.onkeyup = function(ev){
+    var ev = ev || window.event;//实现兼容性
+    console.log(String.fromCharCode(ev.keyCode));
+  }
+  </script>
+</head>
+<body>
+  <div class="content">
+    <div><label>昵称：</label><input id="name" type="text" placeholder="" onblur="aaa()"></div>
+    <div>
+      <label>性别：</label>
+      <select id="sex" onchange="bbb()">
+        <option value="男">男</option>
+        <option value="女">女</option>
+      </select>
+    </div>
+    <div id="tipContent"></div>
+    <div id="clickBtn" class="btns" onclick="ccc()">点击事件</div>
+    <div id="ondblclickBtn" class="btns" ondblclick="ddd()">双击事件</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #height,#weight {
+      width: 40px;
+    }
+  </style>
+</head>
+<body>
+  <input id="height" type="text"><label for="height">cm</label>
+  <input id="weight" type="text"><label for="weight">kg</label>
+  <input id="btn" type="submit" value="判断是否符合标准" />
+<script>
+window.onload = function(){
+  var btn = document.getElementById("btn");
+  btn.onclick = function(){
+    var oH = document.getElementById("height").value;
+    var oW = document.getElementById("weight").value;
+    if(oH!=""&&oW!=""){
+      myFun(oH,oW);
+    }
+  }
+  function myFun(height,weight){//单位分别为厘米和千克
+    if(Math.abs((height-108)*2-weight)<=10){
+      alert("测试者的体重合适");
+    }else{
+      alert("测试者的体重不合适");
+    }
+  }
+}
+</script>
+</body>
+</html>

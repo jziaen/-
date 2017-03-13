@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  window.onload = function(){
+    function hello(){
+      alert("Hello World");
+    }
+    function hello1(){
+      alert("aoweiurkjdsf");
+    }
+
+    t = window.setTimeout(hello,3000);//将这个定时器赋值到一个变量，然后对这个变量清楚定时器
+    m = window.setTimeout(hello1,5000);//可以运行
+    window.clearTimeout(t);
+  }
+</script>
+</body>
+</html>

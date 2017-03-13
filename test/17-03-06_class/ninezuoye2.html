@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>弹幕</title>
+		<style>
+			.box {
+				overflow: hidden;
+				position: relative;width:300px;height: 200px;border:1px solid red
+			}
+		</style>
+		<script>
+			//定义函数 获取id的对象
+			function $(str) {
+				return document.getElementById(str);
+			}
+			//定义函数 send 当点击的时候 获取文本框的内容
+			function send(){
+				var word = $('txt').value;
+				//创建节点 保存吐槽内容
+				var span = document.createElement('span');
+				//生成一个随机top高度值
+				var top = parseInt(Math.random()*200)-20;
+				top = top<0?0:top;
+				//随机颜色值
+				var color1 = parseInt(Math.random()*256);
+				var color2 = parseInt(Math.random()*256);
+				var color3 = parseInt(Math.random()*256);
+				var color = "rgb("+color1
+							+","+color2
+							+","+color3+")";
+
+				//设置定位为绝对定位
+				span.style.position = 'absolute';
+				//随机值距离顶部的高度
+				span.style.top = top + 'px' ;
+				span.style.color = color;
+				span.style.left='300px';
+				//強制不換行
+				span.style.whiteSpace = 'nowrap';
+				//創建隨機速度的值
+				//保存到對象的屬性中(speed)
+				var nub = (Math.random()*10)+1;
+				//給標籤添加屬性
+				span.setAttribute('speed',nub);
+				//給對象添加屬性
+				span.speed = nub;
+				span.innerHTML = word;
+				//追加到显示的盒子里
+				$('box').appendChild(span);
+				//将输入框的内容设置为空
+				$('txt').value ='';
+			}
+			setInterval(move,80);
+			//移动函数
+			function move(){
+				var spanArray = $('box').children;
+				for(var i=0;i<spanArray.length;i++) {
+					spanArray[i].style.left = parseInt(spanArray[i].style.left) - spanArray[i].speed + 'px' ;
+				}
+				//如果span标签已经到最左边，看不见了
+				//删除
+			}
+
+		</script>
+	</head>
+	<body>
+		<div id='box' class='box'></div>
+		<input id='txt' type="text" />
+		<button onclick="send()">吐槽</button>
+	</body>
+</html>

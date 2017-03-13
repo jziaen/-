@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+  var a = "abcdefg",
+      b = "hijklmn",
+      c = "khjcxzvkjsdf";
+
+
+  //charAt()--返回指定位置的字符串
+  document.write(a.charAt(2)+"<br>");//c
+
+  //charCodeAt()--返回指定位置字符串的Unicode编码
+  document.write(a.charCodeAt(4)+"<br>");//101
+
+  //search()--用于检索字符串中指定的子字符串，返回第一个匹配字符串的index
+  document.write(a.search("e")+"<br>");//4
+
+  //replace()--用来查找匹配指定的字符串，返回使用新字符串代替匹配的字符串后的字符串
+  document.write(a.replace("b","BB")+"<br>");//aBBcdefg
+
+  //concat()--将两个或多个字符串组合起来，返回新的字符串
+  document.write(a.concat(b,c)+"<br>");//abcdefghijklmnkhjcxzvkjsdf
+
+  //indexOf()--返回字符串中第一处出现的索引，如果没有匹配到，返回-1
+  document.write(a.indexOf("d")+"<br>");//3
+
+  //lastIndexOf()--返回字符串中一个子串最后一处出现的位置,如果没有匹配项返回-1
+  document.write(a.lastIndexOf("e")+"<br>");//4
+
+  //slice(start,end)提取字符串的一部分，并返回一个新的字符串，两个参数，第一个为起始位置，第二个为终止位置（留头不留尾））
+  document.write(a.slice(2)+"<br>");//cdefg
+  document.write(a.slice(2,4)+"<br>");//cd
+
+  //substring(start,end)--返回字符串的一个子串，传入参数是起始位置和结束为止（留头不留尾）如果没有end就取到末尾
+  document.write(a.substring(2)+"<br>");//cdefg
+  document.write(a.substring(2,4)+"<br>");//cd
+
+  //substr()--两个参数，第一个为起始位置，第二个代表长度，如果没有end就取到末尾
+  document.write(a.substr(2,2)+"<br>");//cd
+
+  //split()--通过将字符串划分成子串，将一个字符串做成一个字符串数组
+  var d = "aa-bb-cc";
+  document.write(d.split("-")+"<br>");//aa,bb,cc
+  console.log(d.split("-"));
+
+  //length--返回字符串的长度即其包含的字符的个数
+  document.write(a.length+"<br>");//7
+
+  //toLowerCase()--将整个字符串转成小写字母
+  //toUpperCase()--将整个字符串转成大写字母
+  document.write(a.toUpperCase()+"<br>");//ABCDEFG
+
+  //转义字符，输出特殊字符
+  document.write("\\");
+</script>
+</body>
+</html>

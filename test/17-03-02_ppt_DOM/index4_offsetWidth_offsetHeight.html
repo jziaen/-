@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+  .class_div1 { background: blue;}
+  .green { color: red;background: red;}
+
+  </style>
+</head>
+<body>
+  <div class="class_div1" id="id_div1">
+    aldskjflkdsf
+  </div>
+<script type="text/javascript">
+  div1 = document.getElementById("id_div1");
+  console.log(document.getElementById("id_div1").offsetWidth);//auto
+  console.log(document.getElementById("id_div1").offsetHeight);//18
+  console.log(document.getElementById("id_div1").offsetLeft);//8
+  console.log(document.getElementById("id_div1").offsetTop);//8
+  // div1.style.backgroundColor = "blue";
+  div1.onclick = function(){
+    div1.className = "green";
+    alert(div1.className);
+  }
+
+</script>
+</body>
+</html>

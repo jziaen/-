@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p id="txt"></p>
+<script type="text/javascript">
+window.onload = function(){
+
+  setInterval(function(){
+    var txt = document.getElementById("txt");
+    var time = new Date();
+    var nowTime = time.getTime();
+    var willTime = new Date("3 1,2017 23:00:00").getTime();
+    var differ = Math.round((willTime-nowTime)/1000);
+    var hours = parseInt(differ/3600);
+    var minutes = parseInt((differ-hours*3600)/60);
+    var seconds = parseInt(differ%60);
+    txt.innerHTML = hours+"小时"+minutes+"分钟"+seconds+"秒";
+  },1000)
+}
+
+
+</script>
+</body>
+</html>

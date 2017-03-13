@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    li{
+      width: 80px;
+      height: 80px;
+      background: url(1.png);
+    }
+  </style>
+</head>
+<body>
+<input id="input1" type="text" value="" placeholder="1:剪刀,2:石头,3:布" />
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+<p id="p1"></p>
+<input id="btn" type="button" value="提交" />
+<script>
+  var oInput = document.getElementById("input1");
+  var oP = document.getElementById("p1");
+  var a = setInterval(function(){
+    oP.innerHTML = arr[Math.floor(Math.random()*3)];
+  },30);
+  var arr = ["剪刀","石头","布"];
+  //oP.innerHTML = arr[Math.floor(Math.random()*3)];
+
+  document.getElementById("btn").onclick = function(){
+    clearTimeout(a);
+    oP.innerHTML = arr[Math.floor(Math.random()*3)];
+    if(arr[parseInt(oInput.value)-1] == oP.innerHTML){
+      alert("猜对了");
+    }else{
+      alert("猜错了");
+
+    }
+  }
+</script>
+</body>
+</html>

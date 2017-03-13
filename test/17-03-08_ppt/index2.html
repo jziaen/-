@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    div {display: none;}
+  </style>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+<script type="text/javascript">
+  var li = document.getElementsByTagName("li");
+  var div = document.getElementsByTagName("div");
+
+
+  for(var i=0;i<4;i++){
+    li[i].num = i;
+  }
+  for(var j=0;j<4;j++){
+    li[j].onmouseover = function(){
+      div[this.num].style.display = "block";
+    }
+    li[j].onmouseout = function(){
+      div[this.num].style.display = "none";
+    }
+  }
+</script>
+</body>
+</html>

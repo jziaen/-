@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function Dog(name,age){
+    this.name = "1";
+    this.age = "";
+    // this.Category = "狗类";//可以在对象创建时定义该属性，
+  }
+  Dog.prototype.Category = "狗类";//也可以在对象外面创建对象属性
+  var dog01 = new Dog("土狗",2);
+  var dog02 = new Dog("黄狗",5);
+  document.write(dog01.name+"<br>");//无法打印出来
+  document.write(dog01.Category+"<br>");
+  document.write(dog02.Category+"<br>");
+  Dog.prototype.Category = "犬类";
+  document.write(dog01.Category+"<br>");
+  document.write(dog02.Category+"<br>");
+  
+</script>
+</body>
+</html>

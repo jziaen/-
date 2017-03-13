@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function Car(color,doors,mpg){
+    this.color = color;
+    this.doors = doors;
+    this.mpg = mpg;
+    this.showColor = function(){
+      document.write(this.color+"-"+this.doors+"-"+this.mpg+"<br>");
+    }
+  }
+  var oCar1 = new Car("red",4,24);
+  var oCar2 = new Car("blue",3,25);
+
+  oCar1.showColor();
+  oCar2.showColor();
+  document.write(oCar1.doors+oCar2.mpg+"<br>");
+</script>
+</body>
+</html>

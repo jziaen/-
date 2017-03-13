@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  var index = 0;
+  for(var i=1000;i<2001;i++){
+    if(i%4==0&&i%100!=0||i%400==0){
+      document.write(i+" ");
+      index++;
+      if(index%4==0){
+        document.write("<br>");
+      }
+    }
+  }
+</script>
+</body>
+</html>

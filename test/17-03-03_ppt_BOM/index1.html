@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      height: 100000px;
+    }
+  </style>
+</head>
+<body>
+  <button>close关闭</button>
+  <button>open在新窗口打开本地文件</button>
+  <button>open在新窗口打开网址</button>
+  <button>confirm点击确认或取消</button>
+  <button>prompt返回文本框的值</button>
+<script type="text/javascript">
+  var a = "外面out";
+  function say(){
+    var a = "out";
+    alert(window.a);
+  }
+  //say();//外面out
+  document.getElementsByTagName("button")[0].onclick = function(){
+    // window.open("main.md");
+    window.close();
+  }
+  document.getElementsByTagName("button")[1].onclick = function(){
+    window.open("index5_history.html");
+    // window.close();
+  }
+  document.getElementsByTagName("button")[2].onclick = function(){
+    window.open("http://www.baidu.com");
+    // window.close();
+  }
+  document.getElementsByTagName("button")[3].onclick = function(){
+    var a = confirm("想明白生命的意义吗？想正真地……活着吗？");
+    document.write(a);//点击确定是true，点击取消是false
+  }
+  document.getElementsByTagName("button")[4].onclick = function(){
+    var b = prompt("请输入密码","");
+    document.write(b);//点击确定是输入的文本，点击取消返回null
+      if(b == "12"){
+      alert("密码正确");
+    }else{
+      alert("密码错误");
+    }
+  }
+  window.onscroll = function(){
+    console.log(123);
+  }
+</script>
+</body>
+</html>

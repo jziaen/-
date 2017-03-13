@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    #btn { background: red;}
+  </style>
+  <script type="text/javascript">
+    window.onload = function(){
+      document.getElementById("btn").onclick = function(){
+        alert("送你葱");
+      }
+      document.getElementsByClassName("btn1")[0].onclick = function(){
+        alert("这里什么都没有");
+      }
+      document.getElementsByClassName("btn1")[1].onclick = function(){
+        alert("送你一朵花");
+      }
+      document.getElementsByClassName("btn1")[2].onclick = function(){
+        alert("这里有各种神装任你选择");
+      }
+      document.getElementsByTagName("input")[4].onclick = function(){
+        alert("这里什么都没有");
+      }
+    }
+
+  </script>
+</head>
+<body>
+  <input type="button" id="btn" value="点击就送" />
+  <input type="button" class="btn1" value="点击就送" />
+  <input type="button" class="btn1" value="点击就送" />
+  <input type="button" class="btn1" value="点击就送" />
+  <input type="button" class="btn1" value="点击就送" />
+
+
+</body>
+</html>

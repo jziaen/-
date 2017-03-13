@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="text/javascript">
+  window.onload = function(){
+    var oAdd = document.getElementById("add");
+    var oReplace = document.getElementById("replace");
+    var oRemove = document.getElementById("remove");
+
+    oAdd.onclick = function(){
+      main(1);
+    }
+    oReplace.onclick = function(){
+      main(2);
+    }
+    oRemove.onclick = function(){
+      main(3);
+    }
+    function main(type){//1:添加 2:替换 3:删除
+      var arr1 = [
+        "黄河之水天上来，奔流到海不复回。",
+        "天生我才必有用，千金散尽还复来! ",
+        "仰天大笑出门去，我辈岂是蓬蒿人!",
+        "大道入青天，我独不得出。"
+      ];
+      var arr2 = [
+        "两个黄鹂鸣翠柳, 一行白鹭上青天。 ",
+        "窗含西岭千秋雪, 门泊东吴万里船。 ",
+        " 随风潜入夜，润物细无声。",
+        "野径云俱黑，江船火独明。"
+      ];
+
+
+
+
+      var oWP = document.getElementsByTagName("p");//查找所有P元素
+
+      if(type==1){//添加
+        var oP = document.createElement("p"); //新建的段落
+        oP.innerHTML = arr1[Math.floor(Math.random()*arr1.length)];
+
+        document.body.appendChild(oP);
+      }
+      if(type==2 && oWP!=undefined){//替换
+        for(var i=0;i<oWP.length;i++){
+          var wP = document.createElement("p"); //替换的段落
+          wP.innerHTML = arr2[Math.floor(Math.random()*arr2.length)];
+
+          // document.body.replaceChild(wP,oWP[0]);
+          document.body.replaceChild(wP,oWP[i]);
+        }
+      }
+      if(type==3 && oWP!=undefined){//删除第一个p元素
+        document.body.removeChild(oWP[0]);
+      }
+    }
+  }
+
+  </script>
+</head>
+<body>
+<button id="add">添加</button>
+<button id="replace">替换</button>
+<button id="remove">删除</button>
+<script type="text/javascript">
+window.onload
+</script>
+</body>
+</html>

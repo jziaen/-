@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    div {width: 200px;height: 100px;background: rgb(41, 119, 138);text-align: center;line-height: 100px;}
+    #b { position: absolute;top: 8px;left: 300px;}
+  </style>
+  <script type="text/javascript">
+  window.onload = function(){
+    var a = document.getElementById("a");
+    a.val = a.innerHTML;
+    a.onmouseover = function(){
+      a.innerHTML = "鼠标以移入";
+      a.style.backgroundColor = "rgb(132, 16, 138)";
+    }
+    a.onmouseout = function(){
+      a.innerHTML = "鼠标以移出";
+      a.style.backgroundColor = "rgb(41, 119, 138)";
+
+      setTimeout("aa()",500);
+
+    }
+
+    var b = document.getElementById("b");
+
+    b.onmousedown = function(ev){
+      var ev = ev || window.event;
+      var subLeft = ev.clientX - this.offsetLeft;
+      var subTop = ev.clientY - this.offsetTop;
+      document.onmousemove = function(ev){
+        var ev = ev || window.event;
+        b.style.left = ev.clientX - subLeft + "px";
+        b.style.top = ev.clientY - subTop + "px";
+        // console.log(this.clientX);
+      }
+      b.onmouseup = function(){
+        document.onmousemove = null;
+      }
+    }
+
+  }
+  function aa(){
+    a.innerHTML = a.val;
+  }
+  </script>
+</head>
+<body>
+<div id="a">鼠标监控器</div>
+<div id="b">移动臣妾的位置</div>
+</body>
+</html>

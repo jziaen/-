@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    input,button {
+      outline: none;
+      padding: 5px 10px;
+      /*border: none;
+      border: 1px solid #CCC;
+      border-radius: 10px;*/
+    }
+    #btn1 {
+    }
+    #btn1:active {
+      background: red;
+    }
+
+  </style>
+  <script>
+  window.onload = function(){
+    function up(){
+      alert(12);
+    }
+  }
+
+  </script>
+</head>
+<body>
+  <button id="btn1">ondblclick 双击事件</button>
+  <input type="text" id="btn2" placeholder="onfocus 元素获得焦点" />
+
+<script type="text/javascript">
+  var btn1 = document.getElementById("btn1");
+  var btn2 = document.getElementById("btn2");
+
+
+  btn1.ondblclick = function(){
+    alert("你已经触发双击事件");
+  }
+  // btn1.onclick = function(){
+  //   alert("你已经触发单击事件");
+  // }
+
+  btn2.onfocus = function(){
+    // this.style.placeholder = "该元素已获得焦点";
+    this.value = "该元素已获得焦点";
+  }
+  btn2.onblur = function(){
+    // this.style.placeholder = "该元素失去焦点";
+    this.value = "该元素失去焦点";
+  }
+  btn2.ondblclick = function(){
+    alert("你已经触发双击事件");
+  }
+  btn2.onselect = function(){
+    alert("onselect");
+  }
+
+</script>
+</body>
+</html>
